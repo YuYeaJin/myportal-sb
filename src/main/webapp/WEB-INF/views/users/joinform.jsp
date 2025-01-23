@@ -32,7 +32,7 @@
 	<h1>회원 가입</h1>
 	
 	<form:form
-		modelAttribute="userVo"
+		modelAttribute="userVo" 
 		id="join-form"
 		name="registerForm" 
 		action="${pageContext.servletContext.contextPath }/users/join"
