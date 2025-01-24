@@ -1,5 +1,6 @@
 package himedia.myportal.repositories;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public UserVo selectUser(String email) {
 		
-		UserVo = userMapper.selectUserByEmail(email);
+		UserVo vo = userMapper.selectUserByEmail(email);
 //		UserVo vo = 
 //				sqlSession.selectOne("user.selectUserByEmail", email);
 		return vo;
@@ -48,11 +49,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public UserVo selectUser(String email, String password) {
 		
-		Map<String, String> userMap = new HasMap<>();
+		Map<String, String> userMap = new HashMap<>();
 		userMap.put("email", email);
-		userMap.put("Password", password);
+		userMap.put("password", password);
 		
-		UserVo vo= userMapper.selectUserByEmailAndPassword(userMap)
+		UserVo vo= userMapper.selectUserByEmailAndPassword(userMap);
 //		Map<String, String> userMap 
 //			= new HashMap<>();
 //		userMap.put("email", email);
@@ -61,7 +62,7 @@ public class UserDaoImpl implements UserDao {
 //		UserVo vo = 
 //			sqlSession.selectOne("user.selectUserByEmailAndPassword", 
 //					userMap);
-		return null;
+		return vo;
 	}
 
 }

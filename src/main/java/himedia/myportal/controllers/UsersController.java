@@ -26,7 +26,6 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/users")
 public class UsersController {
-	
 	private static final Logger logger =
 			LoggerFactory.getLogger(UsersController.class);
 	@Autowired
@@ -73,7 +72,7 @@ public class UsersController {
 			return "redirect:/users/joinsuccess";
 		}
 	}
-
+	
 	@GetMapping("/login")
 	public String loginForm() {
 		return "users/loginform";
@@ -104,7 +103,6 @@ public class UsersController {
 			return "redirect:/users/login";
 		}
 	}
-
 	
 	@ResponseBody
 	@GetMapping("/checkEmail")
@@ -122,19 +120,4 @@ public class UsersController {
 		
 		return map;
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
